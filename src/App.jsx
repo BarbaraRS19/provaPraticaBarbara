@@ -1,13 +1,21 @@
-import Clubs from './components/Clubs'
-import Header from './components/Header'
-import './App.css'
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Players from './components/Players';
+import Home from './screens/Home';
+import "./App.css"
 
 function App() {
 
   return (
     <>
-    <Header/>
-    <Clubs/>
+  
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/players/:clubId" element={<Players />} />
+      </Routes>
+    </Router>
+
     </>
   )
 }
